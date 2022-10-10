@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 const categories = [
     {
-    name: 'React',
-    slug: 'react'
+    name: 'Rehabilitation',
+    slug: 'rehab'
     }, 
     {
-    name: 'Web Development',
-    slug: 'web-dev'    
+    name: 'Massage Therapy',
+    slug: 'massage-therapy'    
     }
 ]
 
@@ -20,7 +20,7 @@ const Header = () => {
           <div className='md:float-left block'>
             <Link href="/">
                 <span className='cursor-pointer font-bold text-4xl text-white'>
-                    GraphCMS
+                    Blog
                 </span>
             </Link>
           </div>
