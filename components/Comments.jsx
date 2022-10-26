@@ -1,11 +1,11 @@
-import React, { useState, useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import moment from 'moment';
-import parse from 'hmtl-react-parser';
+import parse from 'html-react-parser';
 
 import { getComments } from '../services'
 
 function Comments({ slug }) {
-  const [comments, setComments] = useEffect([])
+  const [comments, setComments] = useState([])
 
   useEffect(() => {
       getComments(slug)
