@@ -12,9 +12,21 @@ const CommentsForm = ({ slug }) => {
     storeData: false,
   });
 
+  useEffect(() => {
+    setLocalStorage(window.localStorage);
+    const initialFormData = {
+      name: window.localStorage.getItem("name"),
+      email: window.localStorage.getItem("email"),
+      storeData:
+        window.localStorage.getItem("name") ||
+        window.localStorage.getItem("email"),
+    };
+    setFormData(initialFormData);
+  }, []);
+
   const onInputChange = (e) => {
     const { target } = e;
-    if (target.type === 'checkbox') {
+    if (target.type === "checkbox") {
       setFormData((prevState) => ({
         ...prevState,
         [target.name]: target.checked,
@@ -27,34 +39,49 @@ const CommentsForm = ({ slug }) => {
     }
   };
 
-
   const handlePostSubmission = () => {
     setError(false);
-    const {name, email, comment, storeData} = formData;
-    if(!name || !email || !comment) {
+    const { name, email, comment, storeData } = formData;
+    if (!name || !email || !comment) {
       setError(true);
       return;
     }
     const commentObj = { name, email, comment, slug };
 
-    submitComment(commentObj)
-          .then((res) => {
+    if (storeData) {
+      localStorage.setItem("name", name);
+      localStorage.setItem("email", email);
+    } else {
+      localStorage.removeItem("name");
+      localStorage.removeItem("email");
+    }
 
-            setTimeout(() => {
-              setShowSuccessMessage(false)
-            }, 3000)
-
-          })
-  }
+    submitComment(commentObj).then((res) => {
+      if (res.createComment) {
+        if (!storeData) {
+          formData.name = "";
+          formData.email = "";
+        }
+        formData.comment = "";
+        setFormData((prevState) => ({
+          ...prevState,
+          ...formData,
+        }));
+        setShowSuccessMessage(true);
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+        }, 3000);
+      }
+    });
+  };
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-      <h3 className="text-xl mb-8 font-semibold border-b pb-4">
-        Leave a Reply
-      </h3>
+      <h3 className="text-xl mb-8 font-semibold border-b pb-4">Leave a Reply</h3>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea
           value={formData.comment}
+          onChange={onInputChange}
           className="p-4 outline-none w-full rounded-lg h-40 focus:ring focus:ring-gray-200 bg-gray-100 text-gray-700"
           name="comment"
           placeholder="Comment"
@@ -86,7 +113,11 @@ const CommentsForm = ({ slug }) => {
             name="storeData"
             value="true"
           />
-          <label className="text-gray-500 cursor-pointer ml-2" htmlFor="storeData">Save my name and email address in this browser for the next time I
+          <label
+            className="text-gray-500 cursor-pointer ml-2"
+            htmlFor="storeData"
+          >
+            Save my name and email address in this browser for the next time I
             comment.
           </label>
         </div>
@@ -102,7 +133,11 @@ const CommentsForm = ({ slug }) => {
         >
           Post Comment
         </button>
-        {showSuccessMessage && <span className="text-xl float-right font-semibold mt-3 text-green-500">Comment submitted for review</span>}
+        {showSuccessMessage && 
+          <span className="text-xl float-right font-semibold mt-3 text-green-500">
+            Comment submitted for review
+          </span>
+        }
       </div>
     </div>
   );
