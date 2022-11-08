@@ -22,17 +22,17 @@ const PostCard = ({ post }) => {
 
       <div className="block lg:flex text-center items-center justify-center mb-8 w-full">
         <div className="flex items-center justify-center mb-4 lg:mb-0 w-full lg:w-auto mr-8 items-center">
-          <Image
+          {/* <Image
             unoptimized
             // loader={CMSImageLoader}
-            alt={post.author.name}
+            alt={""}
             height="30px"
             width="30px"
             className="align-middle rounded-full"
             src={post.author.photo.url}
-          />
+          /> */}
           <p className="inline align-middle text-gray-700 ml-2 font-medium text-lg">
-            {post.author.name}
+            {""}
           </p>
           </div>
           <div className="font-medium text-gray-700">
