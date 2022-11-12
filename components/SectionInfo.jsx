@@ -13,10 +13,13 @@ const SectionInfo = () => {
       </div>
       <div className="contact-info-container">
         <div className="contact-info-buttons">
+          <div>
           <div className="info-btn">
             <FaEnvelope className="icon" />
           </div>
             <p className="info-btn-data">admin@atriumphysiotherapy.com</p>
+          </div>
+          <div>
           <div className="info-btn">
             <FaMapMarkerAlt className="icon" />
           </div>
@@ -25,14 +28,19 @@ const SectionInfo = () => {
               <br />
               Calgary, AB, T2X 1P1
             </p>
+          </div>
+          <div>
           <div className="info-btn">
             <FaPhoneAlt className="icon" />
           </div>
             <p>+1(403)-255 4461</p>
+          </div>
+          <div>
           <div className="info-btn">
             <FaFax className="icon" />
           </div>
             <p>+1(403)-259 8776</p>
+          </div> 
         </div>
       </div>
       <div className="appointment-btn-section">

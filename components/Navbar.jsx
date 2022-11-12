@@ -1,9 +1,7 @@
-
 import React, { useState } from "react";
 import Link from "next/link";
 
-
-const Navbar =() => {
+const Navbar = () => {
   //change burger classes
   const [burgerClass, setBurgerClass] = useState("burger-bar unclicked");
   const [menuClass, setMenuClass] = useState("menu hidden");
@@ -30,26 +28,14 @@ const Navbar =() => {
           <div className={burgerClass}></div>
         </div>
         <div className="menu-items">
-          <Link href="/">
-            Home
-          </Link>
-          <Link href="/About">
-            About
-          </Link>
-          <Link href="/Services">
-            Services
-          </Link>
-          <Link href="/Blog">
-            Blog
-          </Link>
-          <Link href="/Contact">
-            Contact
-          </Link>
-        <div className="covidBtn">
-          <Link href="/Covid19">
-            Covid-19 Alert
-          </Link>
-        </div>
+          <Link href="/">Home</Link>
+          <Link href="/About">About</Link>
+          <Link href="/Services">Services</Link>
+          <Link href="/Blog">Blog</Link>
+          <Link href="/Contact">Contact</Link>
+          <div className="covidBtn">
+            <Link href="/Covid19" >Covid-19 Alert</Link>
+          </div>
         </div>
         <div className={menuClass}></div>
       </nav>

@@ -65,6 +65,12 @@ ul li {
   cursor: pointer;
 }
 
+.contact-info-buttons>div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .info-btn {
   display: flex;
   align-content: center;
@@ -90,24 +96,23 @@ ul li {
 It's not possible to transition on display:hidden so to elminate this <p></p> I set the height to 0 and the hide the overflow on position absolute, to make it show again I only need to modify height property on hover
 */
 
-.contact-info-buttons > p {
-  /* position: absolute; */
+.contact-info-buttons>div>p {
+  position: absolute;
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 2px;
-  /* height: 0;
-  bottom: 0; */
-  margin-left: -25px;
+  height: 0;
+  bottom: 0;
   overflow: hidden;
   align-self: center;
-  transition: height 0.5s, position 0s, ease-in-out;
+  transition: height 1s, position 0s, ease-in-out;
 }
 
 .icon {
   font-size: 24px;
   color: #fff;
 }
- 
+
 .info-btn:hover {
   background: none;
   color: #fff;
@@ -115,20 +120,13 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
   box-shadow: none;
 }
 
-.contact-info-buttons:hover > p:first-child {
+.contact-info-buttons>div:first-child:hover>p,
+.contact-info-buttons>div:nth-child(2):hover>p,
+.contact-info-buttons>div:nth-child(3):hover>p,
+.contact-info-buttons>div:last-child:hover>p {
   height: 50%;
   position: relative;
-  color: red;
 }
-
-/* .contact-info-card >div:first-child:hover>p,
-.contact-info-card div:nth-child(2):hover>p,
-.contact-info-card div:nth-child(3):hover>p,
-.contact-info-card div:last-child:hover>p {
-
-} */
-
-
 
 
 /* /////////////// CONTACT INFORMATION //////////////////////*/
@@ -351,12 +349,11 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
 
 .covidBtn {
   height: 30px;
-  width: 180px;
+  width: 280px;
   min-width: 140px;
   max-width: 200px;
   border: 0;
   padding: 8px;
-  width: 280px;
   border-radius: 8px;
   background: #cd4c32;
   cursor: pointer;
@@ -374,11 +371,14 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
 .covidBtn a:hover {
   transform: scale(1.1);
   transition: all 0.5s ease;
+
 }
 
 .covidbtn:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   transition: all 0.5s ease;
+  border: 1px solid #cd4c32;
+  background-color: #fff;
 }
 
 
