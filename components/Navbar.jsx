@@ -34,7 +34,7 @@ const Navbar = () => {
           <Link href="/Blog">Blog</Link>
           <Link href="/Contact">Contact</Link>
           <div className="covidBtn">
-            <Link href="/Covid19" >Covid-19 Alert</Link>
+            <Link href="/Covid19" ><a>Covid-19 Alert</a></Link>
           </div>
         </div>
         <div className={menuClass}></div>

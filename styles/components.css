@@ -253,7 +253,7 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
   font: 16px/1.4px 'Poppins', sans-serif;
   text-decoration: none;
   font-size: 16px;
-  color: #111;
+  color: #353535;
   transition: all 0.5s ease;
 }
 
@@ -348,7 +348,7 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
 }
 
 .covidBtn {
-  height: 30px;
+  height: 35px;
   width: 280px;
   min-width: 140px;
   max-width: 200px;
@@ -357,7 +357,7 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
   border-radius: 8px;
   background: #cd4c32;
   cursor: pointer;
-  box-shadow: -3px 3px 1px 0.8px rgba(0, 0, 0, 0.2),
+  box-shadow: 3px -3px 5px 0.8px rgba(0, 0, 0, 0.2),
     3px -1px 5px 1px rgba(255, 255, 2555, 0.3);
   transition: all 0.5s ease;
   align-self: center;
@@ -365,19 +365,23 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
 }
 
 .covidBtn a {
+  display: block;
   color: #fff;
+  width: inherit;
+  padding: 12px;
+  text-align: center;
 }
 
-.covidBtn a:hover {
+.covidBtn:hover a:hover {
   transform: scale(1.1);
   transition: all 0.5s ease;
-
+  color: #cd4c32;
 }
 
-.covidbtn:hover {
+.covidBtn:hover {
   transform: scale(1.2);
   transition: all 0.5s ease;
-  border: 1px solid #cd4c32;
+  border: 3px solid #cd4c32;
   background-color: #fff;
 }
 
