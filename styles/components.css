@@ -37,7 +37,8 @@ ul li {
 
 /* //////////////// LOGO //////////////////////*/
 
-.logo {
+.logo-container {
+  box-sizing: content-box;
   width: 400px;
   right: 0;
   padding: 30px;
@@ -45,7 +46,6 @@ ul li {
   align-items: center;
   padding-left: 30px;
 }
-
 
 /* /////////////// CONTACT INFORMATION //////////////////////*/
 
@@ -56,9 +56,8 @@ ul li {
   align-items: center;
 }
 
-.contact-info-card {
+.contact-info-buttons {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: flex-start;
   gap: 30px;
@@ -66,7 +65,7 @@ ul li {
   cursor: pointer;
 }
 
-.contact-info-card>div {
+.info-btn {
   display: flex;
   align-content: center;
   justify-content: center;
@@ -74,8 +73,8 @@ ul li {
   gap: 10px;
 }
 
-.card-icon {
-  font-size: 20px;
+.info-btn {
+  margin: 0;
   background: #141441;
   width: 50px;
   height: 50px;
@@ -84,42 +83,53 @@ ul li {
   border-radius: 50%;
   box-shadow: -3px 3px 1px 0.8px rgba(0, 0, 0, 0.2),
     3px -1px 5px 1px rgba(255, 255, 2555, 0.3);
-  transition: all 1s linear;
+  transition: all 0.7s linear;
 }
 
 /*
 It's not possible to transition on display:hidden so to elminate this <p></p> I set the height to 0 and the hide the overflow on position absolute, to make it show again I only need to modify height property on hover
 */
 
-.contact-info-card>div>p {
-  position: absolute;
-  font-size: 12px;
+.contact-info-buttons > p {
+  /* position: absolute; */
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 2px;
-  height: 0;
-  bottom: 0;
+  /* height: 0;
+  bottom: 0; */
+  margin-left: -25px;
   overflow: hidden;
-  text-align: start;
-  transition: height 0.7s, position 0s, ease-in-out;
+  align-self: center;
+  transition: height 0.5s, position 0s, ease-in-out;
 }
 
-.contact-info-card div:first-child:hover .card-icon,
-.contact-info-card div:nth-child(2):hover .card-icon,
-.contact-info-card div:nth-child(3):hover .card-icon,
-.contact-info-card div:last-child:hover .card-icon {
+.icon {
+  font-size: 24px;
+  color: #fff;
+}
+ 
+.info-btn:hover {
   background: none;
   color: #fff;
   transform: scale(1.6);
   box-shadow: none;
 }
 
-.contact-info-card div:first-child:hover>p,
+.contact-info-buttons:hover > p:first-child {
+  height: 50%;
+  position: relative;
+  color: red;
+}
+
+/* .contact-info-card >div:first-child:hover>p,
 .contact-info-card div:nth-child(2):hover>p,
 .contact-info-card div:nth-child(3):hover>p,
 .contact-info-card div:last-child:hover>p {
-  height: 50%;
-  position: relative;
-}
+
+} */
+
+
+
 
 /* /////////////// CONTACT INFORMATION //////////////////////*/
 
@@ -351,7 +361,7 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
   background: #cd4c32;
   cursor: pointer;
   box-shadow: -3px 3px 1px 0.8px rgba(0, 0, 0, 0.2),
-  3px -1px 5px 1px rgba(255, 255, 2555, 0.3);
+    3px -1px 5px 1px rgba(255, 255, 2555, 0.3);
   transition: all 0.5s ease;
   align-self: center;
   margin-right: 20px;
@@ -447,12 +457,6 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
   transition: all 0.5s ease;
 }
 
-.icon {
-  font-size: 25px;
-  color: rgb(0, 93, 185);
-  position: relative;
-  top: 2px;
-}
 
 
 
