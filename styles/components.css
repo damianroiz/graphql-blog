@@ -2,6 +2,10 @@
 
 :root {
   --blue-bg-color: linear-gradient(47deg, rgb(0, 26, 255), rgb(113, 196, 255) 100%);
+  --blue-main: rgb(0, 26, 255);
+  --menu-font: 500 16px/1.4px 'Ubuntu', sans-serif;
+  --footer-font: 16px/1.4 'Poppins', sans-serif;
+
 }
 
 a {
@@ -250,7 +254,7 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
 }
 
 .menu-items a {
-  font: 16px/1.4px 'Poppins', sans-serif;
+  font: --menu-font;
   text-decoration: none;
   font-size: 16px;
   color: #353535;
@@ -260,7 +264,7 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
 .menu-items a:hover {
   transform: scale(1.1);
   transition: all 0.5s ease;
-  color: rgb(0, 26, 255);
+  color: var(--blue-main);
 }
 
 @media screen and (max-width: 560px) {
@@ -397,7 +401,7 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
 */
 
 .About {
-  background: linear-gradient(47deg, rgb(0, 26, 255, 0.7), rgb(113, 196, 255, 0.7) 100%);
+  background: var(--blue-bg-color);
   background-position: 40% 20%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -413,13 +417,13 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
   z-index: 1;
   font-size: 55px;
   font-weight: 900;
-  color: white;
+  color: #fff;
 }
 
 .link-home {
   z-index: 1;
   font-size: 18px;
-  color: white;
+  color: #fff;
   text-decoration: underline;
 }
 
@@ -446,7 +450,7 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
 .container-icons {
   width: 50px;
   height: 50px;
-  background-color: white;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -475,7 +479,7 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 40px;
-  background: linear-gradient(47deg, rgb(0, 26, 255), rgb(113, 196, 255) 100%);
+  background: var(--blue-bg-color);
   color: #fff;
 }
 
