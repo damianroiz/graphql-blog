@@ -84,7 +84,7 @@ ul li {
 }
 
 .info-btn {
-  margin: 0;
+  margin: 0 10px;
   background: #141441;
   width: 50px;
   height: 50px;
@@ -100,7 +100,7 @@ ul li {
 It's not possible to transition on display:hidden so to elminate this <p></p> I set the height to 0 and the hide the overflow on position absolute, to make it show again I only need to modify height property on hover
 */
 
-.contact-info-buttons>div>p {
+.contact-info-buttons>div>span {
   position: absolute;
   font-size: 15px;
   font-weight: 400;
@@ -117,17 +117,17 @@ It's not possible to transition on display:hidden so to elminate this <p></p> I 
   color: #fff;
 }
 
-.info-btn:hover {
+.info-btn-container:hover .info-btn{
   background: none;
   color: #fff;
   transform: scale(1.6);
   box-shadow: none;
 }
 
-.contact-info-buttons>div:first-child:hover>p,
-.contact-info-buttons>div:nth-child(2):hover>p,
-.contact-info-buttons>div:nth-child(3):hover>p,
-.contact-info-buttons>div:last-child:hover>p {
+.contact-info-buttons>div:first-child:hover>span,
+.contact-info-buttons>div:nth-child(2):hover>span,
+.contact-info-buttons>div:nth-child(3):hover>span,
+.contact-info-buttons>div:last-child:hover>span {
   height: 50%;
   position: relative;
 }

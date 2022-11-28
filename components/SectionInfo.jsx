@@ -13,33 +13,32 @@ const SectionInfo = () => {
       </div>
       <div className="contact-info-container">
         <div className="contact-info-buttons">
-          <div>
+          <div className="info-btn-container">
           <div className="info-btn">
             <FaEnvelope className="icon" />
           </div>
-            <p className="info-btn-data">admin@atriumphysiotherapy.com</p>
+            <span>admin@atriumphysiotherapy.com</span>
           </div>
-          <div>
+          <div className="info-btn-container">
           <div className="info-btn">
             <FaMapMarkerAlt className="icon" />
           </div>
-            <p>
-              340 Midpark Way SE - Suite 140
-              <br />
+            <span>
+              340 Midpark Way SE - Suite 140<br />
               Calgary, AB, T2X 1P1
-            </p>
+            </span>
           </div>
-          <div>
+          <div className="info-btn-container">
           <div className="info-btn">
             <FaPhoneAlt className="icon" />
           </div>
-            <p>+1(403)-255 4461</p>
+            <span>+1(403)-255 4461</span>
           </div>
-          <div>
+          <div className="info-btn-container">
           <div className="info-btn">
             <FaFax className="icon" />
           </div>
-            <p>+1(403)-259 8776</p>
+            <span>+1(403)-259 8776</span>
           </div> 
         </div>
       </div>
